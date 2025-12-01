@@ -1,0 +1,30 @@
+# Ignore downloaded datasets
+*.csv
+*.tsv
+*.parquet
+*.zip
+*.gz
+*.h5
+*.xlsx
+
+# If you only want to ignore the huge file:
+# games_march2025_cleaned.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
