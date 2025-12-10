@@ -3,7 +3,14 @@ LABEL org.opencontainers.image.authors="Daniel Lam He <daniellam1702@tamu.edu>, 
 LABEL version="1.2"
 LABEL description="CSCE 315 Final Project"
 
-RUN apt-get update -y
+RUN apt-get update -y && \
+    apt-get install -y \
+        texlive-xetex \
+        texlive-latex-recommended \
+        texlive-fonts-recommended \
+        texlive-latex-extra \
+        pandoc \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
 
@@ -15,6 +22,7 @@ RUN pip install scikit-learn==1.6.0
 RUN pip install matplotlib==3.10.0
 RUN pip install pyarrow==18.1.0
 RUN pip install kagglehub==0.3.13
+RUN apt-get install -y pandoc
 
 WORKDIR /home/notebooks/
 
