@@ -10,6 +10,7 @@ RUN apt-get update -y && \
         texlive-fonts-recommended \
         texlive-latex-extra \
         pandoc \
+        libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
@@ -22,7 +23,6 @@ RUN pip install scikit-learn==1.6.0
 RUN pip install matplotlib==3.10.0
 RUN pip install pyarrow==18.1.0
 RUN pip install kagglehub==0.3.13
-RUN apt-get install -y pandoc
 RUN pip install xgboost==3.1.2
 RUN pip install lightgbm==4.6.0
 RUN pip install catboost==1.2.8
